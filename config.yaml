@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+client:
+  timeout: "10s"
+
+database:
+  host: "postgres"
+  port: 5432
+  user: "postgres"
+  password: "postgres" 
+  name: "weather"
+  ssl_mode: "disable"
+
+logger:
+ level: "debug"
+
+migrations: 
+  dir: "./migrations"
