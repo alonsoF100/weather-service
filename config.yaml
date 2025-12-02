@@ -8,12 +8,26 @@ client:
   timeout: "10s"
 
 database:
-  host: "postgres"
+  host: "localhost" # postgres - Docker, localhost - local
   port: 5432
   user: "postgres"
   password: "postgres" 
   name: "weather"
   ssl_mode: "disable"
+
+cron:
+  update_interval: "15m"
+  cities:
+    - "Moscow"
+    - "London"
+    - "New York"
+    - "Tokyo"
+    - "Berlin"
+    - "Paris"
+    - "Rome"
+    - "Madrid"
+    - "Beijing"
+    - "Sydney"
 
 logger:
  level: "debug"

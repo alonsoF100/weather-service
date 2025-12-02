@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/alonsoF100/weather-service/internal/config"
+	"github.com/alonsoF100/weather-service/internal/http/handler"
 	"github.com/go-chi/chi/v5"
 )
 
@@ -13,8 +14,10 @@ type Server struct {
 	server *http.Server
 }
 
-func Setup(cfg config.ServerConfig) *Server {
+func Setup(cfg config.ServerConfig, h *handler.Handler) *Server {
 	r := chi.NewRouter()
+
+	r.Get("/{city}", h.GetWeather)
 
 	httpServer := http.Server{
 		Addr:         fmt.Sprintf(":%d", cfg.Port),

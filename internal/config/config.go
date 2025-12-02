@@ -6,6 +6,7 @@ type Config struct {
 	Server    ServerConfig    `mapstructure:"server"`
 	Client    ClientConfig    `mapstructure:"client"`
 	Database  DatabaseConfig  `mapstructure:"database"`
+	Cron      CronConfig      `mapstructure:"cron"`
 	Logger    LoggerConfig    `mapstructure:"logger"`
 	Migration MigrationConfig `mapstructure:"migration"`
 }
@@ -28,6 +29,11 @@ type DatabaseConfig struct {
 	Password string `mapstructure:"password"`
 	Name     string `mapstructure:"name"`
 	SSlMode  string `mapstructure:"ssl_mode"`
+}
+
+type CronConfig struct {
+	UpdateInterval time.Duration `mapstructure:"update_interval"`
+	Cities         []string      `mapstructure:"cities"`
 }
 
 type LoggerConfig struct {
