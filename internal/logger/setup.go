@@ -13,6 +13,7 @@ func Setup(cfg config.LoggerConfig) *slog.Logger {
 	logger := slog.New(handler)
 	slog.SetDefault(logger)
 
+	slog.Info("Logger setuped successfully")
 	return logger
 }
 

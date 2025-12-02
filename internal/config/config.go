@@ -11,7 +11,10 @@ type Config struct {
 }
 
 type ServerConfig struct {
-	Port int `mapstructure:"port"`
+	Port         int           `mapstructure:"port"`
+	ReadTimeout  time.Duration `mapstructure:"read_timeout"`
+	WriteTimeout time.Duration `mapstructure:"write_timeout"`
+	IdleTimeout  time.Duration `mapstructure:"idle_timeout"`
 }
 
 type ClientConfig struct {

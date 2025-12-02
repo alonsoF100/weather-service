@@ -1,6 +1,8 @@
 package config
 
 import (
+	"log"
+
 	"github.com/spf13/viper"
 )
 
@@ -16,5 +18,6 @@ func Load() *Config {
 		panic(err)
 	}
 
+	log.Printf("Config loaded successfully")
 	return &config
 }
